@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="lib/moment.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css"></link>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.print.css"></link>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script src="index.js"></script>
+	<link rel="stylesheet" href="index.css"></link>
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand nav-left"><span><img id="drugs" src="drugs.png" width="30" height="30" alt="">Medicine Tracker</span></a></div>
+				<div id="navbar-collapse-1" class="collapse navbar-collapse nav-left">
+					<ul class="tabs">
+						<li class="tab col"><a id="calendarGo">Calendar</a></li>
+						<li class="tab col"><a id="rewardsGo">Rewards</a></li>
+						<li class="tab col"><a onclick="help()">Help</a></li>
+						<li class="tab col"><a onclick="contact()">Contact</a></li>
+					</ul>
+					<!-- <div class="navbar-text navbar-right"></div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div id="calendar-view">
+			<div id="medicine-add">
+				<img id="pill" src="pill.png"><div id="med-header">Add Medicine</div>
+				<div id="med-name" class="input-field col s6">
+					<input id="name" type="text" class="validate" required="" aria-required="true">
+					<label for="name">Medicine Name</label>
+				</div>
+				<div id="med-dosage" class="input-field col s6">
+					<input id="dosage" type="text" class="validate" required="" aria-required="true">
+					<label for="dosage">Dosage</label>
+				</div>
+				<div id="days-row">
+					<div class="day-check">
+						<input type="checkbox" id="Mon" />
+						<label for="Mon"></label>
+						<span class="day-text">M</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Tue" />
+						<label for="Tue"></label>
+						<span class="day-text">T</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Wed" />
+						<label for="Wed"></label>
+						<span class="day-text">W</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Thu" />
+						<label for="Thu"></label>
+						<span class="day-text">R</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Fri" />
+						<label for="Fri"></label>
+						<span class="day-text">F</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Sat" />
+						<label for="Sat"></label>
+						<span class="day-text">S</span>
+					</div>
+					<div class="day-check">
+						<input type="checkbox" id="Sun" />
+						<label for="Sun"></label>
+						<span class="day-text">Su</span>
+					</div>
+				</div>
+
+				<a id="add-button" class="waves-effect waves-light btn"><b>+</b> Add Medicine</a>
+			</div>
+			<div id="calendar-container">
+				<div id="stats-bar">
+					<ul class="collapsible medicine-count" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header medicine-title"><img src="pills.png" width=30 height=30><span class="new badge"></span> Medicine List</div>
+							<div class="collapsible-body medicine-list">
+								<div>None</div>
+							</div>
+						</li>
+					</ul>
+
+
+					<ul class="collapsible point-count" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header"><img src="star.png" width=30 height=30><span class="new badge"></span> <span class="points-title">Points</span></div>
+							<div class="collapsible-body point-list">
+								<div>Week 1 - 2</div>
+								<div>Week 2 - 1</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="calendar"></div>
+			</div>
+		</div>
+		<div id="rewards-view">
+			<div id="rewards-container">
+				<h2 class="header">Rewards</h2>
+				<div class="row">
+				<div class="col s12 m4">
+
+						<div class="card horizontal">
+							<div class="card-image">
+								<img src="http://www.carex.com/images/items/APX_70010_Image1.jpg">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<p><b>Pill Organizer</b></p>
+									<p>10 Points</p>
+									</br>
+									<p>Helps to keep tracks of pills</p>
+								</div>
+								<div class="card-action">
+									<a href="#">Spend Points</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m4">
+
+						<div class="card horizontal">
+							<div class="card-image">
+								<img src="http://target.scene7.com/is/image/Target/15041155?wid=450&hei=450&fmt=pjpeg">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<p><b>Water Bottle</b></p>
+									<p>20 Points</p>
+									</br>
+									<p>A Water Bottle</p>
+								</div>
+								<div class="card-action">
+									<a href="#">Spend Points</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m4">
+
+						<div class="card horizontal">
+							<div class="card-image">
+								<img src="https://images-na.ssl-images-amazon.com/images/I/A1jbT0WKfZL._SL1500_.jpg">
+							</div>
+							<div class="card-stacked">
+								<div class="card-content">
+									<p><b>Backpack</b></p>
+									<p>100 Points</p>
+									</br>
+									<p>A Backpack</p>
+								</div>
+								<div class="card-action">
+									<a href="#">Spend Points</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	</html>

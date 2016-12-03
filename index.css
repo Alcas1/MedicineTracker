@@ -1,0 +1,229 @@
+
+@font-face {
+    font-family: "ProximaNova";
+    src: url("ProximaNova.woff") format('woff');
+}
+
+*{
+	font-family: "ProximaNova";
+
+}
+
+
+a{
+	cursor: pointer;
+	text-decoration: none !important;
+}
+
+
+label {
+  
+  margin-bottom: 0px;
+}
+
+
+.day-check{
+	position:relative;
+	width:14%;
+	float:left;
+}
+
+.day-text{
+	padding-left:3px;
+}
+
+#days-row{
+	width:100%;
+	padding-left:25px;
+}
+
+#add-button{
+	width:60%;
+	margin-left:20%;
+	margin-top:20px;
+}
+
+.fc-day-header{
+	margin-bottom:10px;
+}
+
+.fc-event { 
+	border-radius:2;
+	border:0;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.14);
+	text-align: center;
+	font-size:16px;
+	height:40px;
+}
+
+.event-checked{
+	
+	color:#fff !important;
+	background-color:#26a69a !important;
+	
+}
+
+
+
+
+/*.fc-content-skeleton table tbody tr td{
+	height:400px;
+}*/
+
+#drugs{
+	margin-top: -5px;
+	margin-right:5px;
+}
+
+.navbar{
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.14);
+	
+}
+
+.navbar-brand{
+	color:#26a69a !important;
+}
+
+.navbar-default{
+	background-color: #fff;
+}
+
+
+
+.navbar li a{
+	color:#26a69a;
+}
+
+#med-header{
+	font-size: 20px;
+}
+
+.allTaken{
+	color:#26a69a;
+	/*border:solid 1px #26a69a;*/
+}
+
+#pill{
+	width:25px;
+	position: relative;
+	float: left;
+}
+
+#med-header{
+
+	padding-left:10px;
+	position: relative;
+	float:left;
+
+}
+
+#med-name{
+	text-align: left;
+	margin-top: 50px;
+}
+
+#calendar-view{
+	height:100%;
+	width:100%;
+
+}
+
+#rewards-view{
+	height:100%;
+	width:100%;
+	padding-top:60px;
+
+}
+
+#rewards-container{
+	height: 100%;
+	width:90%;
+	padding-left:5%;
+}
+
+
+#medicine-add{
+	padding-top:70px;
+	width:25%;
+	height:100%;
+	position:relative;
+	float:left;
+	padding-left:50px;
+}
+
+#calendar-container{
+	position: relative;
+	width:75%;
+	height:100%;
+	float:right;
+}
+
+.collapsible-body{
+	border-bottom: none;
+}
+
+#stats-bar{
+	position: relative;
+	padding-left:3%;
+	padding-right:6%;
+	width:100%;
+	height:40px;
+	margin-top: 60px;
+}
+
+.nav-left{
+	position:relative;
+	float: left;
+}
+
+.tabs{
+	height:50px; 
+}
+
+
+.tab{
+	background-color: transparent !important;
+
+}
+
+.medicine-count{
+	position: relative;
+	float:left;
+	font-size:18px;
+	width:180px;
+	border-radius: 2px;
+}
+
+.point-count{
+	position: relative;
+	float:right;
+	font-size:18px;
+	width:150px;
+	border-radius: 2px;
+}
+
+
+
+.medicine-list div{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom:5px;
+	/*border-top:solid 1px #eee;*/
+}
+
+.point-list div{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom:5px;
+	/*border-top:solid 1px #eee;*/
+}
+
+#calendar{
+	position:relative;
+	
+	width:94%;
+	padding-left:3%;
+	height:100%;
+
+
+}
